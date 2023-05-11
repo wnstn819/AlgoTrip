@@ -1,87 +1,52 @@
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Main {
     public static int N;
-    public static long min = Long.MAX_VALUE,max = Long.MIN_VALUE;
     public static String[] arr;
-    public static String minStr,maxStr;
     public static ArrayList<String> result = new ArrayList<>();
-    public static boolean[] visited;
+    public static boolean[] visited = new boolean[10];
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        StringBuilder sb = new StringBuilder();
 
         N = Integer.parseInt(st.nextToken());
-        arr = new String[N+1];
-        visited = new boolean[10];
+        arr = new String[N + 1];
         st = new StringTokenizer(br.readLine());
-        for ( int i = 0;i<N;i++){
+        for (int i = 0; i < N; i++) {
             arr[i] = st.nextToken();
         }
 
-        DFS(0,result);
-
-        System.out.println(maxStr);
-        System.out.println(minStr);
+        DFS( "",0);
+        Collections.sort(result);
+        System.out.println(result.get(result.size() - 1)); //최댓값
+        System.out.println(result.get(0)); //최솟값
 
 
     }
 
-    public static void DFS(int s,ArrayList<String> list){
-        if (list.size() == N+1){
-            String ans="";
-            for(String t : list){
-                ans+=t;
-            }
-            if (min> Long.parseLong(ans)){
-                min = Math.min(Long.parseLong(ans),min);
-                minStr = ans;
-            }
-
-            if (max <Long.parseLong(ans)){
-                max = Math.max(Long.parseLong(ans),max);
-                maxStr = ans;
-            }
+    public static void DFS( String str,int depth) {
+        if (depth == N + 1) {
+            result.add(str);
             return;
         }
 
-
-        for (int i =0;i<10;i++){
-            boolean mis = false;
-            if (list.size() ==0){
-                mis = true;
-            }
-            if (!visited[i]){
-                    if(s >0){
-                        switch (arr[s-1]){
-                            case "<":
-                                if(Integer.parseInt(list.get(list.size()-1)) < i){
-                                    mis = true;
-                                }
-                                break;
-                            case ">":
-                                if(Integer.parseInt(list.get(list.size()-1)) >i){
-                                    mis = true;
-                                }
-                                break;
-                        }
-                    }
-                    if(mis){
-                        visited[i] = true;
-                        list.add(String.valueOf(i));
-                        DFS(s+1,list);
-                        visited[i] = false;
-                        list.remove(list.size()-1);
-                    }
+        for (int i = 0; i < 10; i++) {
+            if (depth == 0 || !visited[i] && compare(str.charAt(str.length()-1)-'0',i,arr[depth-1])) {
+                visited[i] = true;
+                DFS(str+i,depth+1);
+                visited[i] = false;
 
             }
 
         }
 
 
+    }
+    private static boolean compare(int a, int b, String c) {
+        if (c.equals("<")) return a < b;
+        else return a > b;
     }
 
 }
