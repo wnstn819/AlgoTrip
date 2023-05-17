@@ -2,7 +2,7 @@ import java.io.*;
 import java.util.*;
 
 
-class Line implements Comparable<Line>{
+class Line{
     int x;
     int cost;
     Line(int x , int cost){
@@ -10,10 +10,6 @@ class Line implements Comparable<Line>{
         this.cost=cost;
     }
 
-    @Override
-    public int compareTo(Line o) {
-        return this.cost - o.cost;
-    }
 }
 
 public class Main {
@@ -37,6 +33,7 @@ public class Main {
             line.add(new ArrayList<Line>());
         }
 
+        // 그래프에 인접도시 객체 추가
         for(int i=0;i<m;i++){
             st = new StringTokenizer(br.readLine());
             int a,b,cost;
@@ -51,10 +48,10 @@ public class Main {
         int sC = Integer.parseInt(st.nextToken());
         int sA = Integer.parseInt(st.nextToken());
 
-
+        // 거리 값 전부 최댓값으로 초기화
         Arrays.fill(dp, Integer.MAX_VALUE);
         dp[sC] = 0;
-        bfs(sC);
+        bfs(sC); // 다익스트라 시작
 
         int count =0;
 
@@ -74,7 +71,9 @@ public class Main {
 
 
     public static void bfs(int start){
-        PriorityQueue<Line> q = new PriorityQueue<>();
+        // 가장 짧은 곳부터 차례대로 하기 위해서
+
+       Queue<Line> q = new LinkedList<>();
         q.add(new Line(start,0));
 
         while(!q.isEmpty()){
