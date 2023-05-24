@@ -46,7 +46,7 @@ def main():
                 content += "## 📚 {}\n".format(directory)
                 content += "| 문제분류 | 링크 |\n"
                 content += "| ----- | ----- |\n"
-            elif directory in ["out","production","구현","그래프탐색","그리디","문자열","분할정복","브루트포스","스택","우선순위_큐","위상정렬","이진탐색","정렬","큐","BFS","DFS","DP"]:
+            elif directory in ["out","production","구현","그래프탐색","그리디","문자열","분할정복","브루트포스","스택","우선순위_큐","위상정렬","이진탐색","정렬","큐","BFS","DFS","DP","Lv2"]:
                 continue;
             else:
                 content += "### 🚀 {}\n".format(directory)
