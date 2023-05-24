@@ -1,11 +1,11 @@
-package G5_2230_수고르기;
+package 정렬.G5_2230_수고르기;
 
 import java.io.*;
 import java.util.*;
 
 
 public class Main {
-    public static int N,M;
+    public static int N,M,result=Integer.MAX_VALUE;
     public static Integer[] arr;
     public static void main(String[] args) throws IOException {
         //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -24,11 +24,20 @@ public class Main {
         Arrays.sort(arr);
 
         int p1 = 0;
-        int p2 = arr.length-1;
+        int p2 = 0;
 
-        while(p1<p2){
-            
+        while(p1<=p2 && p2<N){
+            int ans = arr[p2]-arr[p1];
+            if(ans >= M){
+                result = Math.min(result, ans);
+                p1++;
+            }else{
+                p2++;
+            }
+
         }
+
+        System.out.println(result);
 
 
 
