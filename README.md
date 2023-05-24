@@ -9,10 +9,6 @@
 |DFS|[링크](./javaSt/src/DFS)|
 |DP|[링크](./javaSt/src/DP)|
 |Lv2|[링크](./javaSt/src/Lv2)|
-### 🚀 Lv2
-| 문제번호 | 링크 |
-| ----- | ----- |
-|뒤에있는큰수찾기|[링크](./javaSt/src/Lv2/%EB%92%A4%EC%97%90%EC%9E%88%EB%8A%94%ED%81%B0%EC%88%98%EC%B0%BE%EA%B8%B0/Main.java)|
 |S2_5379_키로거|[링크](./javaSt/src/S2_5379_%ED%82%A4%EB%A1%9C%EA%B1%B0)|
 |구현|[링크](./javaSt/src/%EA%B5%AC%ED%98%84)|
 |그래프탐색|[링크](./javaSt/src/%EA%B7%B8%EB%9E%98%ED%94%84%ED%83%90%EC%83%89)|
