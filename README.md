@@ -59,6 +59,7 @@
 ### 🚀 Bronze
 | 문제번호 | 링크 |
 | ----- | ----- |
+|10926. ？？！|[링크](./%EB%B0%B1%EC%A4%80/Bronze/10926.%E2%80%85%EF%BC%9F%EF%BC%9F%EF%BC%81/README.md)|
 |17608. 막대기|[링크](./%EB%B0%B1%EC%A4%80/Bronze/17608.%E2%80%85%EB%A7%89%EB%8C%80%EA%B8%B0/README.md)|
 |1977. 완전제곱수|[링크](./%EB%B0%B1%EC%A4%80/Bronze/1977.%E2%80%85%EC%99%84%EC%A0%84%EC%A0%9C%EA%B3%B1%EC%88%98/README.md)|
 |1978. 소수 찾기|[링크](./%EB%B0%B1%EC%A4%80/Bronze/1978.%E2%80%85%EC%86%8C%EC%88%98%E2%80%85%EC%B0%BE%EA%B8%B0/README.md)|
