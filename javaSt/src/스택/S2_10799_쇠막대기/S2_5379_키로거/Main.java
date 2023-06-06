@@ -1,4 +1,4 @@
-package S2_5379_키로거;
+package 스택.S2_10799_쇠막대기.S2_5379_키로거;
 
 import java.io.*;
 import java.util.*;
