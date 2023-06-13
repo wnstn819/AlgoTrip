@@ -17,12 +17,8 @@ class Solution {
         }
         
       
-            int one = numbers[num] + sum;
-            DFS(numbers,one,num+1,target);
-            one = sum - numbers[num];
-            
-            one = sum - numbers[num];
-            DFS(numbers,one,num+1,target);
+            DFS(numbers,numbers[num] + sum,num+1,target);
+            DFS(numbers,sum - numbers[num],num+1,target);
             
         
         
