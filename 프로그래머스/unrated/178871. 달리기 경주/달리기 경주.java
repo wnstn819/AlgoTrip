@@ -20,17 +20,6 @@ class Solution {
         }
         
         
-        List<String> keySet = new ArrayList<>(map.keySet());
-        
-        keySet.sort((o1,o2) -> map.get(o1).compareTo(map.get(o2)));
-   
-        
-        int index =0;
-          for(String s : keySet){
-            answer[index] = s;
-              index++;
-        }
-    
-        return answer;
+        return players;
     }
 }
