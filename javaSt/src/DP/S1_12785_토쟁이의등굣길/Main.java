@@ -1,6 +1,5 @@
 package DP.S1_12785_토쟁이의등굣길;
 
-import jdk.dynalink.NamespaceOperation;
 
 import java.io.*;
 import java.util.*;

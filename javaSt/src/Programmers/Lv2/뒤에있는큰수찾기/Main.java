@@ -1,4 +1,4 @@
-package Lv2.뒤에있는큰수찾기;
+package Programmers.Lv2.뒤에있는큰수찾기;
 
 import java.io.*;
 import java.util.*;

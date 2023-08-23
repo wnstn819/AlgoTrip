@@ -14,6 +14,7 @@ class Locate{
         this.depth = depth;
     }
 }
+
 public class Main {
         public static int N,M;
         public static int[][] arr;
@@ -43,20 +44,14 @@ public class Main {
 
             }
         }
-
         BFS();
-
-
         for(int[] i : arr){
             for(int j: i){
                 sb.append(j).append(" ");
-
             }
             sb.append("\n");
         }
-
         System.out.println(sb);
-
     }
 
     public static void BFS(){
