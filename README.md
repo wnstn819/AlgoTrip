@@ -8,6 +8,7 @@
 |BFS|[링크](./javaSt/src/BFS)|
 |DFS|[링크](./javaSt/src/DFS)|
 |DP|[링크](./javaSt/src/DP)|
+|LeetCode|[링크](./javaSt/src/LeetCode)|
 |Programmers|[링크](./javaSt/src/Programmers)|
 ### 🚀 Programmers
 | 문제번호 | 링크 |
