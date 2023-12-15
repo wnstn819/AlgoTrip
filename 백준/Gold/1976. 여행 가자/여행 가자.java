@@ -20,7 +20,7 @@ public class Main {
             st = new StringTokenizer(br.readLine());
             for(int j =0;j<N;j++){
                 map[i][j] = Integer.parseInt(st.nextToken());
-                 if(i == j){
+                if(i == j){
                     map[i][j] = 1;
                 }
             }
@@ -47,17 +47,20 @@ public class Main {
         }
 
         int num = que.size();
-        for(int i=0;i<num;i++){
-            arr[i] = que.poll();
+        int count = 0;
+        int start = 0;
+        while(!que.isEmpty()){
+            arr[count] = que.poll()-1;
+            if(count ==0) start = arr[count];
+            count++;
         }
-        
-        for(int i =0;i<num;i++){
-            for(int j=i+1;j<num;j++){
-                if(map[arr[i]-1][arr[j]-1] == 0){
+
+        for(int i =1;i<num;i++){
+                if(map[start][arr[i]] == 0){
                     result="NO";
                 }
 
-            }
+
         }
 
         System.out.println(result);
