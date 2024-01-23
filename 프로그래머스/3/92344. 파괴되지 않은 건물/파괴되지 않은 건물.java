@@ -16,18 +16,14 @@ class Solution {
             int c1 = arr[2];
             int r2 = arr[3];
             int c2 = arr[4];
-            int degree =arr[5];
-            if(arr[0] == 1){
-                dp[r1][c1] -= degree;
-                dp[r2+1][c1] += degree;
-                dp[r1][c2+1] += degree;
-                dp[r2+1][c2+1] -= degree;
-            }else{
-                dp[r1][c1] += degree;
-                dp[r2+1][c1] -= degree;
-                dp[r1][c2+1] -= degree;
-                dp[r2+1][c2+1] += degree;
-            }
+            int degree =arr[5] * (arr[0] == 1 ? -1 : 1);
+            
+            dp[r1][c1] += degree;
+            dp[r2+1][c1] += (degree * -1);
+            dp[r1][c2+1] += (degree * -1);
+            dp[r2+1][c2+1] += degree;
+    
+         
         }
         
         
