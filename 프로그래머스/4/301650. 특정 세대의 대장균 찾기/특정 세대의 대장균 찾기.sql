@@ -1,0 +1,15 @@
+-- 코드를 작성해주세요
+WITH A as (
+    SELECT * 
+      FROM ECOLI_DATA 
+      WHERE PARENT_ID IS NULL
+), B as (
+    SELECT E.*
+        FROM ECOLI_DATA E
+        JOIN A ON E.PARENT_ID = A.ID
+)
+
+SELECT E.ID
+FROM ECOLI_DATA E
+JOIN B ON E.PARENT_ID = B.ID
+ORDER BY E.ID;
