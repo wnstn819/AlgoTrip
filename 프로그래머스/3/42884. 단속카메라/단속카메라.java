@@ -9,7 +9,6 @@ class Solution {
             
         });
         int camera = routes[0][1];
-    
         
         for(int i=1;i<routes.length;i++){
             if( camera < routes[i][0]){
