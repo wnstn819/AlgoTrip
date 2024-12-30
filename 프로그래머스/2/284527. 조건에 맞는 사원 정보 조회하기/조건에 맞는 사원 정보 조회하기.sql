@@ -1,0 +1,33 @@
+# -- 코드를 작성해주세요
+# HR_DEPARTMENT, HR_EMPLOYEES, HR_GRADE 테이블에서 2022년도 한해 평가 점수가 가장 높은 사원 정보를 조회하려 합니다. 2022년도 평가 점수가 가장 높은 사원들의 점수, 사번, 성명, 직책, 이메일을 조회하는 SQL문을 작성해주세요.
+
+# 2022년도의 평가 점수는 상,하반기 점수의 합을 의미하고, 평가 점수를 나타내는 컬럼의 이름은 SCORE로 해주세요.
+
+
+# WITH EMP_RANK as (
+#     SELECT EMP_NO, SUM(SCORE) AS TOTAL_SCORE
+#     FROM HR_GRADE
+#     GROUP BY EMP_NO
+# )
+
+# SELECT EMP_NO, TOTAL_SCORE,
+#     RANK() OVER (ORDER BY TOTAL_SCORE DESC) as rank
+# FROM EMP_RANK
+
+
+WITH EMP_RANK AS (
+    SELECT EMP_NO, SUM(SCORE) AS TOTAL_SCORE
+    FROM HR_GRADE
+    GROUP BY EMP_NO
+),
+EMP_PERSON AS (
+    SELECT EMP_NO, TOTAL_SCORE,
+       RANK() OVER (ORDER BY TOTAL_SCORE DESC) AS `rank`
+    FROM EMP_RANK
+    LIMIT 1
+)
+
+SELECT A.TOTAL_SCORE AS SCORE, A.EMP_NO, B.EMP_NAME, B.POSITION, B.EMAIL
+FROM EMP_PERSON A
+JOIN HR_EMPLOYEES B
+USING(EMP_NO)
